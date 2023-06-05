@@ -1,0 +1,58 @@
+create table Course(Course_name varchar(10),
+                    Course_ID number,
+                    Department varchar(10));
+
+
+
+Create table Student(Name varchar(20),
+                     ID number,
+                     Course varchar(10),
+                     Semester varchar(10));
+
+
+
+Create table Grade(ID number,
+                   Semester varchar(10),
+                   Course varchar(10),
+                   Grade varchar(10),
+                   constraint ID FOREIGN KEY (ID)REFERENCES Student(ID),
+                   constraint Semester FOREIGN KEY (Semester)REFERENCES Student(Semester),
+                   constraint Course FOREIGN KEY (Course)REFERENCES Student(Course));
+
+
+
+alter table student add instructor varchar(30);
+
+
+
+alter table student modify ID varchar(10);
+
+
+
+alter table course drop column instructor;
+
+
+
+insert into student values('Satya', '179', 'CSE', 'sem-4');
+
+
+
+insert into student values('Faruk', 151, 'ECE', 'sem-3');
+
+
+
+insert into student values('Ali', 116, 'MEC', 'sem-4');
+
+
+
+insert into course values('DS', 212, 'CSE');
+
+
+
+insert into course values('DBMS', 222, 'CSE');
+
+
+
+insert into course values('M1', 111, 'MEC');
+
+
